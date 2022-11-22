@@ -6,6 +6,7 @@
     justify-content: space-evenly;
     align-items: center;
     position: relative;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
   }
 
 .filterHeading{
