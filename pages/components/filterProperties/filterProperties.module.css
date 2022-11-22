@@ -22,17 +22,29 @@ color: rgba(8, 35, 70, 0.5);
 position: relative;
 }
 
-/* .underline{
-height: 4px;
-width: 222px;
-background-color: #000000;
-position: absolute;
-} */
-
-.active{
+.active::after{
   color: #082346; 
   list-style-type: none;  
-  border-bottom: 3px solid black;
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 100%;
+  background-color: #000000;
+  left: 0;
+  bottom: -25px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  animation: appear 0.1s linear;
+}
+
+
+@keyframes appear{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
 }
 
 .heading{

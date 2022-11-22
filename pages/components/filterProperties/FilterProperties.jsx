@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import styles from './filterProperties.module.css'
 const FilterProperties = () => {
   const[selected,setSelected]=useState(null)
- 
+  const listRef = useRef();
+  const handleClick = () => {
+    
+      listRef.current.style.transform = `translateX(${430}px)`;
+    }
+    
+  
   let propertyDetails=[
 {
   id:0,
@@ -23,11 +29,14 @@ const FilterProperties = () => {
   return (
     <>
     <div className={styles.filterContainer}>
+   
     {propertyDetails.map((item)=>{
       return <li key={item.id} onClick={()=> setSelected(item.id)}  className={`${styles.filterHeading} ${selected===item.id?`${styles.active}`: ``}`}>{item.name}</li>
     })}
+   
     </div>  
-   {/* <div className={styles.underline}></div> */}
+  
+   <div className={styles.underline} onClick={() => handleClick()}  ref={listRef}></div>
 
    <div className={styles.heading}>
     {selected === 2 && <>
@@ -35,13 +44,13 @@ const FilterProperties = () => {
     <h1 className={styles.filterSubheadings} >For Sale</h1>
 
    <div className={styles.filterColumns1}>
+    <p>Flats for sale in Andher</p>
     <p>Flats for sale in Andheri</p>
     <p>Flats for sale in Andheri</p>
     <p>Flats for sale in Andheri</p>
     <p>Flats for sale in Andheri</p>
     <p>Flats for sale in Andheri</p>
-    <p>Flats for sale in Andheri</p>
-    <p>Flats for sale in Andheri</p>
+    <p>Flats for sale in Andher</p>
    </div>
 
    <div className={styles.filterColumns2}>
